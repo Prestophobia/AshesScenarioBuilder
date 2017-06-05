@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31038153-C9E2-4184-9920-1844FD0F491C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AshesScenarioBuilder1</RootNamespace>
+    <AssemblyName>AshesScenarioBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\AshesScenarioBuilder.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AshesScenarioBuilder1.BootStrapper</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ashes_color.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionMenuOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActionMenuOption.Designer.cs">
+      <DependentUpon>ActionMenuOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionMicro.cs" />
+    <Compile Include="ActionMini.cs" />
+    <Compile Include="Actions.cs" />
+    <Compile Include="AshesAssetHandler.cs" />
+    <Compile Include="BootStrapper.cs" />
+    <Compile Include="CSVDataSheet.cs" />
+    <Compile Include="DdsImage.cs" />
+    <Compile Include="DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogEntryMini.cs" />
+    <Compile Include="DialogMenuOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DialogMenuOption.Designer.cs">
+      <DependentUpon>DialogMenuOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogWindow.Designer.cs">
+      <DependentUpon>DialogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoWindow.Designer.cs">
+      <DependentUpon>InfoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadWindow.Designer.cs">
+      <DependentUpon>LoadWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Map.Designer.cs">
+      <DependentUpon>Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapElement.cs" />
+    <Compile Include="OptionsMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionsMenu.Designer.cs">
+      <DependentUpon>OptionsMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerCard.cs" />
+    <Compile Include="PlayerEditWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerEditWindow.Designer.cs">
+      <DependentUpon>PlayerEditWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerMenuOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerMenuOption.Designer.cs">
+      <DependentUpon>PlayerMenuOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scenario.cs" />
+    <Compile Include="ScenIO.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trigger.cs" />
+    <Compile Include="TriggerMenuOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TriggerMenuOption.Designer.cs">
+      <DependentUpon>TriggerMenuOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TriggerMini.cs" />
+    <Compile Include="TriggerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TriggerWindow.Designer.cs">
+      <DependentUpon>TriggerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TriggerXMLPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TriggerXMLPreview.Designer.cs">
+      <DependentUpon>TriggerXMLPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettingsManager.cs" />
+    <EmbeddedResource Include="ActionMenuOption.resx">
+      <DependentUpon>ActionMenuOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugForm.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogMenuOption.resx">
+      <DependentUpon>DialogMenuOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogWindow.resx">
+      <DependentUpon>DialogWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoWindow.resx">
+      <DependentUpon>InfoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadWindow.resx">
+      <DependentUpon>LoadWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Map.resx">
+      <DependentUpon>Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionsMenu.resx">
+      <DependentUpon>OptionsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerEditWindow.resx">
+      <DependentUpon>PlayerEditWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerMenuOption.resx">
+      <DependentUpon>PlayerMenuOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TriggerMenuOption.resx">
+      <DependentUpon>TriggerMenuOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TriggerWindow.resx">
+      <DependentUpon>TriggerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TriggerXMLPreview.resx">
+      <DependentUpon>TriggerXMLPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\athena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\haalee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rygos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\samuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ventrix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vexen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\na.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows8 loader-128.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock-12-15_33609_md.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\area.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\build.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destruction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\difficulty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\namedCreate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoneCapture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\area1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\build1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destruction1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\difficulty1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\namedCreate1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\research1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phcBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phcBrown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phcCyan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phcGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phcOrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phcRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phcYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssBrown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssCyan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssOrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noEngi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noSeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActivateAI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActivateAI1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activateTrigger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AreaIndicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attackAttackMove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\captureNearest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changeAIDiff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changeAIPersonality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destroy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EndMission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grantstuff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grantTech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hidePanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letterbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notifications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\objective.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playsound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restrict.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reveal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggleAI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AshesLogo-bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdlogo_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\DirectXTex.net-master\src\DirectXTexInterfaces\DirectXTexInterfaces.csproj">
+      <Project>{98495bf2-ded3-4e08-b965-c12d471bc86f}</Project>
+      <Name>DirectXTexInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libs\DirectXTex.net-master\src\DirectXTexNetImpl\DirectXTexNetImpl.vcxproj">
+      <Project>{c92a44e6-5563-46a5-83a7-eb700eb75a8d}</Project>
+      <Name>DirectXTexNetImpl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libs\DirectXTex.net-master\src\DirectXTexNet\DirectXTexNet.csproj">
+      <Project>{9af17a49-3bad-43d6-90c9-d2280282bb7f}</Project>
+      <Name>DirectXTexNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StrategicMapAtlas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\areaIndicator1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\egg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\highlight1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turret.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t1d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t2d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turretd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turrets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stratMask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteSquare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteSquareDiag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteSquareMed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteSquareSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteSquareSwiss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t1Tiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t2Tiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t3Tiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turretTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\destroyTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camRect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camRect2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engiTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nexusTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turiniumTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generatorTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metalTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xTiny1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adrastela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agememnon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agethon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame22x22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ashes_color.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterResolveReferences">
+    <ItemGroup>
+      <EmbeddedResource Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)' == '.dll'">
+        <LogicalName>
+			%(ReferenceCopyLocalPaths.DestinationSubDirectory)%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)
+		</LogicalName>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

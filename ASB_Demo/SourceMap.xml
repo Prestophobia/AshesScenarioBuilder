@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map heightmap_dim_x="2048" heightmap_dim_y="2048" symmetry_mode="0" symmetry_num_axes="2" symmetry_angle_offset="1.570796">
+	<buildings>
+		<b type="PlayerSeed" region_from="-1" region_to="-1" owner="-1">
+			<pos x="-3276.800049" y="-3276.800049"/>
+		</b>
+		<b type="PlayerSeed" region_from="-1" region_to="-1" owner="-1">
+			<pos x="3276.799805" y="-3276.800049"/>
+		</b>
+		<b type="MetalDeposit" region_from="-1" region_to="-1" owner="-1">
+			<pos x="2035.527588" y="-3173.159424"/>
+		</b>
+		<b type="MetalDeposit" region_from="-1" region_to="-1" owner="-1">
+			<pos x="2457.600098" y="-3276.800049"/>
+		</b>
+		<b type="Generator" region_from="-1" region_to="-1" owner="-1">
+			<pos x="-1751.146240" y="-833.019531"/>
+		</b>
+		<b type="Relay" region_from="-1" region_to="-1" owner="-1">
+			<pos x="2040.621094" y="-3673.643555"/>
+		</b>
+		<b type="RadioactivesDeposit" region_from="-1" region_to="-1" owner="-1">
+			<pos x="3098.756836" y="-2143.223633"/>
+		</b>
+		<b type="MetalDeposit" region_from="-1" region_to="-1" owner="-1">
+			<pos x="2081.047607" y="-2353.877686"/>
+		</b>
+		<b type="Relay" region_from="-1" region_to="-1" owner="1">
+			<pos x="2478.430908" y="-2708.910400"/>
+		</b>
+		<b type="Relay" region_from="-1" region_to="-1" owner="1">
+			<pos x="2566.187012" y="-2036.388550"/>
+		</b>
+		<b type="Relay" region_from="-1" region_to="-1" owner="1">
+			<pos x="3556.500488" y="-2322.104492"/>
+		</b>
+		<b type="Relay" region_from="-1" region_to="-1" owner="1">
+			<pos x="3635.954102" y="-3774.919678"/>
+		</b>
+		<b type="PlayerSeed" region_from="-1" region_to="-1" owner="1">
+			<pos x="674.545410" y="336.413330"/>
+		</b>
+	</buildings>
+</map>
+

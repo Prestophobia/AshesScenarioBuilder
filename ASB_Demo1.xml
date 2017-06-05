@@ -1,0 +1,169 @@
+<Mission Title="ASB_Title" Description="ASB_Description" Map="ASB_Demo"
+	Image=""
+	ImageFade=""
+	CompImage=""
+	CompImageFade=""
+	ImageBig="UI/Art/Ascendancy/AscendancyMissionImages/AscendancyBattle.dds"
+	ImageRadius="0.8"
+	Synopsis="ASB_Synopsis"
+	PlanetPosition="0.9,0.9"
+	EnableCreeps="0"
+	NoAttrition="1"
+	NoVPVictory="1"
+	NoSeedVictory="1"
+	HideTerrain="0"
+	HideDifficulty="1"
+>
+	<Player Name="You" Faction="PHC" Team="0" Color="1" StartLocation="2" AIType="Player" AIDifficulty="Normal" NoEngineer="1" />
+	<Player Name="Brainless" Faction="PHC" Team="1" Color="6" StartLocation="0" AIType="Off" AIDifficulty="Beginner" NoSeed="1" NoEngineer="1" />
+	<Player Name="Splinter" Faction="SS" Team="1" Color="2" StartLocation="1" AIType="On" AIDifficulty="Easy" />
+
+	<Trigger Name="Step1_Configuration" Type="Timer" Timer="0">
+		<LetterBox Enable="1" Snap="1"/>
+		<Dialog>
+			<Entry Icon="Artix" Text="Step1_1"/>
+			<Entry Icon="Artix" Text="Step1_2"/>
+			<Entry Icon="Artix" Text="Step1_3"/>
+			<Entry Icon="Artix" Text="Step1_4"/>
+			<Entry Icon="Artix" Text="Step1_5"/>
+			<Entry Icon="Artix" Text="Step1_6"/>
+			<Entry Icon="Artix" Text="Step1_7"/>
+			<Entry Icon="Artix" Text="Step1_8"/>
+			<Entry Icon="Artix" Text="Step1_9"/>
+			<Entry Icon="Artix" Text="Step1_10"/>
+			<Entry Icon="Artix" Text="Step1_11"/>
+			<Entry Icon="Artix" Text="Step1_12"/>
+			<Entry Icon="Artix" Text="Step1_13"/>
+			<Entry Icon="Haalee" Text="Step1_14"/>
+			<Entry Icon="Haalee" Text="Step1_15"/>
+			<Entry Icon="Haalee" Text="Step1_16"/>
+			<Entry Icon="Haalee" Text="Step1_17"/>
+			<Entry Icon="Haalee" Text="Step1_18"/>
+			<Entry Icon="Haalee" Text="Step1_19"/>
+			<Entry Icon="Artix" Text="Step1_20"/>
+			<Entry Icon="Artix" Text="Step2_1"/>
+			<Entry Icon="Artix" Text="Step2_2"/>
+			<Entry Icon="Artix" Text="Step2_3"/>
+			<Entry Icon="Artix" Text="Step2_4"/>
+			<Entry Icon="Artix" Text="Step2_5"/>
+			<Entry Icon="Artix" Text="Step2_6"/>
+			<Entry Icon="Artix" Text="Step2_7"/>
+			<Entry Icon="Artix" Text="Step2_8"/>
+			<Entry Icon="Artix" Text="Step3_1"/>
+			<Entry Icon="Artix" Text="Step3_2"/>
+		</Dialog>
+		<Camera Snap="1" Position="954,304" RTP="0,0,0" Speed="0"/>
+		<Restrict Type="Orbital" ID="CallEngineer" Enable="0"/>
+		<Restrict Type="Unit" ID="PHC_2_Engineer" Enable="0"/>
+		<Restrict Type="Building" ID="PHC_Factory" Enable="0"/>
+		<Restrict Type="Research" ID="PHC_Tech_DataStore" Enable="0"/>
+		<HidePanel HidePlayer="1" HideRank="0" HideResource="0"/>
+		<Camera Save="1"/>
+		<ActivateTrigger Target="Step4_Start"/>
+	</Trigger>
+
+	<Trigger Name="Step2_Setup" Type="Timer" Timer="1">
+		<SpawnBuilding Name="B1" Template="SS_ListeningPost" Player="1" Position="-1270,-1020"/>
+		<SpawnUnit Name="U1" Template="SS_1_Reaper" Player="1" Position="-2000,-900" NoDeath="0"/>
+		<SpawnUnit Name="U2" Template="SS_1_Martyr" Player="1" Position="-2063,915" NoDeath="0" Parent="U1"/>
+		<SpawnUnit Name="YourUnit" Template="PHC_2_Thantos" Player="0" Position="642,419" NoDeath="1"/>
+	</Trigger>
+
+	<Trigger Name="Step3_DifficultySettings" Type="Difficulty" Difficulty="0">
+		<GrantTech Player="1" Tech="Weapons"/>
+		<GrantTech Player="0" Tech="HP"/>
+	</Trigger>
+
+	<Trigger Name="Step4_Start" Type="Timer" Timer="0" Inactive="1">
+		<Dialog>
+			<Entry Icon="Artix" Text="Step4_1"/>
+			<Entry Icon="Artix" Text="Step4_2"/>
+			<Entry Icon="Artix" Text="Step4_3"/>
+			<Entry Icon="Artix" Text="Step4_4"/>
+			<Entry Icon="Artix" Text="Step4_5"/>
+			<Entry Icon="Artix" Text="Step4_6"/>
+			<Entry Icon="Artix" Text="Step5_1"/>
+			<Entry Icon="Artix" Text="Step5_2"/>
+		</Dialog>
+		<Camera Position="-300,-200" RTP="0,0,0" Speed="0"/>
+		<Reveal Name="A1" Position="-300,-200," Size="100" RadarSize="105" Enable="1"/>
+		<AreaIndicator Name="H1" Color="Green" Size="100" Position="-300,-200,"/>
+		<LetterBox Enable="0" Snap="0"/>
+		<Camera Load="1"/>
+	</Trigger>
+
+	<Trigger Name="Step5_Area Triggers" Type="Area" Center="-300,-200" Size="100">
+		<Camera Position="-2000,-915" RTP="0,0,0" Speed="0"/>
+		<AttackAttackMove Name="U1" Position="-300,-200"/>
+		<Dialog>
+			<Entry Icon="Artix" Text="Step5_3"/>
+			<Entry Icon="Artix" Text="Step5_4"/>
+			<Entry Icon="Artix" Text="Step5_5"/>
+			<Entry Icon="Artix" Text="Step5_6"/>
+			<Entry Icon="Artix" Text="Step5_7"/>
+			<Entry Icon="Artix" Text="Step5_8"/>
+			<Entry Icon="Artix" Text="Step5_9"/>
+		</Dialog>
+		<GrantStuff Player="0" Metal="3"/>
+		<Notifications Enable="0"/>
+		<ChangeAIDifficulty Player="2" Difficulty="Beginner" />
+		<AreaIndicator Name="H1" Color="" Size="0" Position="-1800,-880," Duration="0"/>
+		<Camera Load="1"/>
+	</Trigger>
+
+	<Trigger Name="Step6_Destruction Triggers" Type="Destruction" IsBuilding="0" Target="U1">
+		<Dialog>
+			<Entry Icon="Artix" Text="Step6_1"/>
+			<Entry Icon="Artix" Text="Step6_2"/>
+			<Entry Icon="Artix" Text="Step6_3"/>
+			<Entry Icon="Artix" Text="Step6_4"/>
+		</Dialog>
+		<AreaIndicator Name="A2" Color="Red" Size="150" Position="-1800,-880,"/>
+		<PlaySound Sound="NotifyAcknowledged"/>
+		<Objective Name="Obj1" String="Objective1"/>
+		<DestroyBuilding Name="B1" Time="0"/>
+	</Trigger>
+
+	<Trigger Name="Step7_ZoneCapture Triggers" Type="ZoneCapture" Position="-1800,-880" Owner="0" NotOtherTrigger="Step8_Research Triggers">
+		<Objective Name="Obj1" SetCheck="1"/>
+		<Dialog>
+			<Entry Icon="Artix" Text="Step7_1"/>
+			<Entry Icon="Artix" Text="Step7_2"/>
+			<Entry Icon="Artix" Text="Step7_3"/>
+			<Entry Icon="Artix" Text="Step7_4"/>
+		</Dialog>
+		<Highlight Name="R1" Enable="0" />
+		<Objective Name="Obj2" String="Objective2"/>
+		<GrantStuff Quanta="50"/>
+	</Trigger>
+
+	<Trigger Name="Step8_Research Triggers" Type="Research" Player="0" Target="PHC_Tech_MetalStore">
+		<Camera Save="1"/>
+		<Camera Position="666,460" RTP="0,0,0" Speed="0"/>
+		<SpawnUnit Name="U3" Template="SS_3_Controller" Player="2" Position="666,460" NoDeath="0"/>
+		<Objective Name="Obj2" SetCheck="1"/>
+		<Dialog>
+			<Entry Icon="Artix" Text="Step8_1"/>
+			<Entry Icon="Artix" Text="Step8_2"/>
+			<Entry Icon="Artix" Text="Step8_3"/>
+		</Dialog>
+	</Trigger>
+
+	<Trigger Name="Step9_NamedCreate Triggers" Type="NamedCreate" Target="U3">
+		<Dialog>
+			<Entry Icon="Artix" Text="Step9_1"/>
+			<Entry Icon="Artix" Text="Step9_2"/>
+			<Entry Icon="Artix" Text="Step9_3"/>
+			<Entry Icon="Artix" Text="Step10_1"/>
+			<Entry Icon="Artix" Text="Step10_2"/>
+			<Entry Icon="Artix" Text="Step10_3"/>
+		</Dialog>
+		<DestroyUnit Name="U3" Time="20"/>
+		<Camera Speed="0"/>
+	</Trigger>
+
+	<Trigger Name="Step10_Ending" Type="Destruction" IsBuilding="0" Target="U3">
+		<EndMission Victory="1" String=""/>
+	</Trigger>
+
+</Mission>
